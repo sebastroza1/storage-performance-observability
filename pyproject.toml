@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "storage-performance-observability"
+version = "1.0.0"
+description = "Bounded storage I/O experiments with Prometheus evidence"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib==3.11.2",
+    "prometheus-client==0.26.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+

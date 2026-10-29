@@ -1,0 +1,25 @@
+name: storage-performance-observability
+
+services:
+  metrics:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+
+  prometheus:
+    image: prom/prometheus:v3.15.1
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - "127.0.0.1:9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/alerts.yml:/etc/prometheus/alerts.yml:ro
+    depends_on: [metrics]
+    read_only: true
+    tmpfs: [/prometheus]
+    security_opt: ["no-new-privileges:true"]
+

@@ -1,0 +1,12 @@
+2026-10-29T01:52 local execution record
+command: python -m storage_observatory.benchmark
+profile: quick (8 bounded workloads)
+requests_total: 14912
+successes: 14912
+failures: 0
+outputs: reports/results.json, reports/results.csv
+command: python -m storage_observatory.plot_results
+output: reports/benchmark.png (97294 bytes; visually inspected)
+metrics validation: GET http://127.0.0.1:8765/metrics -> HTTP 200, 11649 bytes
+container validation: not executed; Docker daemon unavailable
+Prometheus alert state: configured only; neither rule loaded or fired locally

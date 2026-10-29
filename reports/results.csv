@@ -1,0 +1,9 @@
+name,operation,access,file_size,block_size,concurrency,max_random_ops,elapsed_seconds,bytes_processed,throughput_mib_s,operations_per_second,latency_ms_mean,latency_ms_p50,latency_ms_p95,latency_ms_p99,requests_total,successes,failures,error_rate,availability_observed,sync_policy
+small-seq-write-4k-c1,write,sequential,4194304,4096,1,2048,0.020348,4194304,196.583,50325.345,0.007374,0.0049,0.023,0.026,1024,1024,0,0.0,1.0,flush_and_fsync_once_per_writer
+small-seq-read-4k-c1,read,sequential,4194304,4096,1,2048,0.013447,4194304,297.473,76153.08,0.004365,0.0041,0.0046,0.0069,1024,1024,0,0.0,1.0,flush_and_fsync_once_per_writer
+medium-seq-write-1m-c1,write,sequential,33554432,1048576,1,2048,0.041498,33554432,771.122,771.122,0.483491,0.412,0.6564,0.7927,32,32,0,0.0,1.0,flush_and_fsync_once_per_writer
+medium-seq-read-1m-c1,read,sequential,33554432,1048576,1,2048,0.022861,33554432,1399.776,1399.776,0.459066,0.4407,0.5599,0.5701,32,32,0,0.0,1.0,flush_and_fsync_once_per_writer
+random-write-4k-c1,write,random,16777216,4096,1,2048,0.078775,8388608,101.555,25998.096,0.007748,0.0061,0.0159,0.0244,2048,2048,0,0.0,1.0,flush_and_fsync_once_per_writer
+random-read-4k-c1,read,random,16777216,4096,1,2048,0.025463,8388608,314.176,80429.165,0.006788,0.0053,0.016,0.0239,2048,2048,0,0.0,1.0,flush_and_fsync_once_per_writer
+random-read-4k-c4,read,random,8388608,4096,4,2048,0.102498,33554432,312.203,79923.9,0.025194,0.0231,0.0527,0.0803,8192,8192,0,0.0,1.0,flush_and_fsync_once_per_writer
+seq-write-64k-c4,write,sequential,8388608,65536,4,2048,0.019864,33554432,1610.963,25775.402,0.049218,0.0382,0.0939,0.1862,512,512,0,0.0,1.0,flush_and_fsync_once_per_writer

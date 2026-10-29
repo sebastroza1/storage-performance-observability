@@ -1,0 +1,18 @@
+groups:
+  - name: storage-benchmark
+    rules:
+      - alert: StorageBenchmarkHighErrorRate
+        expr: storage_benchmark_error_ratio > 0.05
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Observed storage benchmark error ratio exceeds 5%"
+      - alert: StorageBenchmarkHighP95Latency
+        expr: storage_benchmark_latency_milliseconds{quantile="p95"} > 50
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Observed storage benchmark p95 block latency exceeds 50 ms"
+
